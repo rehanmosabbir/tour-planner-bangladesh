@@ -9,6 +9,8 @@ import Home from "./pages/Home/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import Login from "./pages/Login/Login/Login";
 import Registration from "./pages/Registration/Registration";
+import PlaceOrder from "./pages/PlaceOrder/PlaceOrder/PlaceOrder";
+import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
             <Route exact path="/home">
               <Home></Home>
             </Route>
+            <PrivateRoute exact path="/placeorder/:orderId">
+              <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
 
             <Route exact path="/login">
               <Login></Login>
