@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStethoscope } from "@fortawesome/free-solid-svg-icons";
+import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
@@ -21,8 +21,11 @@ const Header = () => {
       >
         <Container>
           <NavLink to="/" className="fs-5">
-            <FontAwesomeIcon className="me-2 text-white" icon={faStethoscope} />
-            Circle Hospital BD
+            <FontAwesomeIcon
+              className="me-2 text-white"
+              icon={faPlaneDeparture}
+            />
+            Tour Planner BD
           </NavLink>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -30,15 +33,20 @@ const Header = () => {
               <Nav.Link as={Link} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/orders">
-                My Orders
-              </Nav.Link>
-              <Nav.Link as={Link} to="/manageorders">
-                Manage Orders
-              </Nav.Link>
-              <Nav.Link as={Link} to="/addservice">
-                Add a service
-              </Nav.Link>
+              {user?.email && (
+                <>
+                  <Nav.Link as={Link} to="/orders">
+                    My Orders
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/manageorders">
+                    Manage Orders
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/addservice">
+                    Add a service
+                  </Nav.Link>
+                </>
+              )}
+
               {user?.email ? (
                 <Button onClick={logOut} variant="warning">
                   Logout

@@ -10,55 +10,45 @@ const Blog = () => {
         <div className="col-md-6 col-sm-12">
           <img
             className="img-fluid"
-            src="https://i.ibb.co/7vH20v8/blog-1.jpg"
+            src=" https://i.ibb.co/5rGXQss/Tourist-Places-And-Picnic-Spots-In-Gazipur-1140x530.png"
             alt=""
           />
         </div>
-        <div className="col-md-6 col-sm-12 pt-3">
+        <div className="col-md-6 col-sm-12 pt-1">
           <h4 className="mb-3">
-            Brain Researcher Ian Maze Has Upended Scientific Dogma and Forged
-            New Areas for Therapeutic Discovery
+            30+ Attractive Tourist Places And Picnic Spots In Gazipur (1 Day
+            Tour)
           </h4>
+          <hr />
           <p>
-            For decades, scientific dogma held that the chemicals dopamine and
-            serotonin served as messengers within the central nervous system,
-            allowing brain cells, or neurons, to communicate with each other.
-            Known as neurotransmitters, dopamine and serotonin also contribute
-            to drug addiction and depression.
+            Gazipur district is rich in history and heritage. It is full of
+            archeological sites and places of interest.
           </p>
           <p>
-            His significant discovery opens new avenues for research into other
-            neurotransmitters in the human body, including histamine and
-            norepinephrine, and new possibilities for treating a range of
-            diseases. These include post-traumatic stress disorder, Parkinson’s
-            disease.
+            Notable among the places of interest and heritage of Gazipur
+            district adjoining the capital Dhaka are: Bhawal Rajbari, Baldhar
+            Zamindar Bari, Ancient Capital Indrakpur, Boliadi Zamindar Bari,
+            Kashimpur Zamindar Bari etc.
           </p>
         </div>
       </div>
       <div className="row mb-5">
-        <div className="col-md-6 col-sm-12 pt-3 order-md-first order-last">
-          <h4 className="mb-3">
-            Higher Risk of Autism Found in Babies Born Prematurely According to
-            a Definitive New Mount Sinai Study
-          </h4>
+        <div className="col-md-6 col-sm-12 pt-1 order-md-first order-last">
+          <h4 className="mb-3">Top 10 Attractive Places At Khulna City!</h4>
+          <hr />
           <p>
-            Premature birth is linked to an increased risk of autism spectrum
-            disorder (ASD) in both males and females, with those born earliest
-            carrying the highest risk, according to a large and definitive new
-            study in Pediatrics from the Icahn School of Medicine at Mount
-            Sinai.
-          </p>
-          <p>
-            In reaching their conclusions, the researchers compared siblings
-            within families and were able to control for genetic and
-            environmental factors, which strengthened the link between
-            prematurity and ASD.
+            Khulna district in the southwestern part of Bangladesh is the third
+            largest district in Bangladesh. This unprecedented fusion of
+            industrial trade, nature and folk culture has taken place in this
+            district. There are shrimp industries and shipbuilding industries in
+            Khulna district which is rich in a significant number of river
+            varieties including Rupsha, Bhairab, Chitra, Pashur and Kapotaksh.
           </p>
         </div>
         <div className="col-md-6 col-sm-12 order-md-last order-first">
           <img
             className="img-fluid"
-            src="https://i.ibb.co/x1jPgJw/Two-hand-connecting-jigsaw-puzzle-Concept-of-partnership-and-teamwork-in-business-strategy.jpg"
+            src="https://i.ibb.co/k3xC9GM/khulna-tourist-spot-attractions-1140x411.jpg"
             alt=""
           />
         </div>
@@ -67,28 +57,23 @@ const Blog = () => {
         <div className="col-md-6 col-sm-12">
           <img
             className="img-fluid"
-            src="https://i.ibb.co/TKqSSCF/Asian-senior-man-with-his-medicine-bottles.jpg"
+            src="https://i.ibb.co/ZHB1KTy/Prantik-Lake-Bandarban-1000x530.jpg"
             alt=""
           />
         </div>
-        <div className="col-md-6 col-sm-12 pt-3">
-          <h4 className="mb-3">
-            Vaccine Facts: Immunocompromised People Should Get a Third Dose
-          </h4>
+        <div className="col-md-6 col-sm-12 pt-1">
+          <h4 className="mb-3">Prantik Lake Bandarban – A To Z Travel Guide</h4>
+          <hr />
           <p>
-            Immunocompromised people have a reduced ability to fight infections
-            and are more vulnerable to severe COVID-19. That is why the U.S.
-            Centers for Disease Control and Prevention (CDC) is recommending
-            that people with moderately to severely compromised immune systems
-            receive an additional dose of the Pfizer-BioNTech or Moderna
-            vaccine.
-          </p>
-          <p>
-            To be clear, this is not considered a booster dose. A booster dose
-            is given to a patient whose immunity to the vaccine may have waned
-            over time. This is considered an additional dose, given to
-            immunocompromised patients to improve their initial response to the
-            vaccine series.
+            There is an impeccably beautiful lake called Prantik Lake in
+            Bandarban. The total area of the lake is only 25 to 30 acres out of
+            68 acres. The lake is larger in size than Boga Lake. The area of
+            Boga Lake is 15 acres. Surrounded by mountains and forests, this
+            beautiful lake is full of various species of plants. In 2013, the
+            government declared Prantik lake a tourist reserve. There are many
+            species of wild animals including monkeys and birds in the forest on
+            the banks of the lake which is born naturally. There are Dahuk,
+            different species of aquatic plants in the pond.
           </p>
         </div>
       </div>
@@ -97,3 +82,7 @@ const Blog = () => {
 };
 
 export default Blog;
+
+// https://i.ibb.co/k3xC9GM/khulna-tourist-spot-attractions-1140x411.jpg
+// https://i.ibb.co/ZHB1KTy/Prantik-Lake-Bandarban-1000x530.jpg
+// https://i.ibb.co/5rGXQss/Tourist-Places-And-Picnic-Spots-In-Gazipur-1140x530.png

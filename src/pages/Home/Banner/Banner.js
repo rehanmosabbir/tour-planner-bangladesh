@@ -9,60 +9,63 @@ const Banner = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.ibb.co/NrmLHK3/banner-photo-1.jpg"
+            src="https://i.ibb.co/Sxv7yBG/1200px-Nafa-Khum-Thanchi-Bandarban.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h2 className="fw-bold text-danger">Emergency Service</h2>
+            <h2 className="fw-bold text-danger">Nafakhum Tour Package</h2>
             <p>
-              EMERGENCY DEPARTMENT is a state if art emergency dept. of
-              Bangladesh.This department is staffed with skilled physicians,
-              nurses and other medical staffs who are specialized in emergency
-              patient care.
+              Nafa-khum is a waterfall in Bangladesh on the Remaikree River, a
+              tributary of the Sangu River.It is among the largest waterfalls in
+              the country by volume of water falling.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.ibb.co/3pzxFz5/banner-photo-2.jpg"
+            src="https://i.ibb.co/cy2x14b/1200px-Saint-martin-s-island.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h2 className="fw-bold text-danger">Outdoor Patient Service</h2>
+            <h2 className="fw-bold text-danger">Saint-Martin Tour Package</h2>
             <p>
-              The outpatient department of the hospital can serve 2500 (approx.)
-              patients per day through more then 50 examination rooms.
+              Saint Martin is one of the few coral islands in the world. Saint
+              martin island in Bangladesh is called the blue heaven. Find the
+              best hotels in st. martin & complete tour packages.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.ibb.co/X5bSkFg/banner-photo-3.jpg"
+            src="https://i.ibb.co/g6hWqz9/1200px-Sajek-Valley-Rangamati-3.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h2 className="fw-bold text-danger">Indoor Patient Service</h2>
+            <h2 className="fw-bold text-danger">Sajek Valley Tour Package</h2>
             <p>
-              Indoor department deals with admission of patients to hospital.
-              The patients are requested to contact IPD Reception counter for
-              more details.
+              Sajek valley is famous for its natural beauty. The valley is
+              surrounded by mountains, dense forest, grasslands hilly tracks.
+              Many small rivers flow through the mountains among which Kachalong
+              and Machalong are notable.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.ibb.co/fSG8DBg/banner-photo-4.jpg"
+            src="https://i.ibb.co/SXdcMSh/1200px-Sundarban-Tiger.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h2 className="fw-bold text-danger">Executive Health Checkup</h2>
+            <h2 className="fw-bold text-danger">Sundarban Tour Package</h2>
             <p>
-              Regular health check-up can find problems before they start.
-              Routine health check-up can help determine problems early with
-              better chances of treatment and cure.
+              Sundarbans is a mangrove area in the delta formed by the
+              confluence of the Ganges, Brahmaputra and Meghna Rivers in the Bay
+              of Bengal. It spans from the Hooghly River in India's state of
+              West Bengal to the Baleswar River in Bangladesh's division of
+              Khulna.
             </p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -72,3 +75,8 @@ const Banner = () => {
 };
 
 export default Banner;
+
+// https://i.ibb.co/Sxv7yBG/1200px-Nafa-Khum-Thanchi-Bandarban.jpg
+// https://i.ibb.co/cy2x14b/1200px-Saint-martin-s-island.jpg
+// https://i.ibb.co/g6hWqz9/1200px-Sajek-Valley-Rangamati-3.jpg
+// https://i.ibb.co/SXdcMSh/1200px-Sundarban-Tiger.jpg
