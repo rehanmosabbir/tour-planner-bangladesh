@@ -30,16 +30,12 @@ const Header = () => {
               <Nav.Link as={Link} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/blog">
-                Blog
+              <Nav.Link as={Link} to="/orders">
+                My Orders
               </Nav.Link>
-              <Nav.Link as={Link} to="/about">
-                About us
+              <Nav.Link as={Link} to="/orders">
+                Manage Orders
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact">
-                Contact
-              </Nav.Link>
-
               {user?.email ? (
                 <Button onClick={logOut} variant="warning">
                   Logout
