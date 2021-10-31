@@ -14,12 +14,14 @@ import PrivateRoute from "./pages/Login/PrivateRoute/PrivateRoute";
 import UserOrders from "./pages/UserOrders/UserOrders";
 import ManageOrders from "./pages/ManageOrders/ManageOrders";
 import AddNewService from "./pages/AddNewService/AddNewService";
+import HeaderTop from "./shared/HeaderTop/HeaderTop";
 
 function App() {
   return (
     <div>
       <AuthProvider>
         <Router>
+          <HeaderTop></HeaderTop>
           <Header></Header>
           <Switch>
             <Route exact path="/">
