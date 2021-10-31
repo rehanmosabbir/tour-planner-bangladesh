@@ -15,7 +15,7 @@ const ManageOrders = () => {
   }, []);
 
   const handleChangeStatus = (id) => {
-    const url = `https://cryptic-anchorage-06525.herokuapp.com//orders/${id}`;
+    const url = `https://cryptic-anchorage-06525.herokuapp.com/orders/${id}`;
 
     if (window.confirm("Are you sure to confirm this order?")) {
       const filteredOrder = orders.filter((order) => order._id === id);
