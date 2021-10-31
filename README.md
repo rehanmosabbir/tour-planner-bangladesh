@@ -2,7 +2,7 @@
 
 The name Tour Planner BD, is well known in both national and international markets for the quality of its services having knowledgeable team of English / Japanese / Chinese & other language Speaking Guide.We aim to present the people, history, cultural heritage and beauty of Bangladesh to the world through unique customized services of international standards. We will continue to strengthen our position in the tourism market as one of Bangladesh's leading providers of such services as well as to promote the superiority of our products, prices and our team of local and international travel experts.
 
-https://tour-planner-bd.web.app/
+https://tour-planner-bangladesh.web.app/
 
 ## Tour Planner BD Features:
 

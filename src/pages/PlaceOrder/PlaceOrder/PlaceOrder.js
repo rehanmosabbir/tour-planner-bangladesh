@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
-
 import useAuth from "../../../hooks/useAuth";
 
 const PlaceOrder = () => {
@@ -11,7 +10,10 @@ const PlaceOrder = () => {
   const [service, setService] = useState({});
   const { orderId } = useParams();
   const { register, handleSubmit, reset } = useForm();
+
+  console.log(user.email);
   const onSubmit = (data) => {
+    console.log(data);
     console.log("form submitted");
     axios
       .post("https://cryptic-anchorage-06525.herokuapp.com/orders", {
@@ -24,13 +26,14 @@ const PlaceOrder = () => {
           reset();
         }
       });
+    console.log(data);
   };
 
   useEffect(() => {
     fetch(`https://cryptic-anchorage-06525.herokuapp.com/services/${orderId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
-  }, []);
+  }, [orderId]);
 
   return (
     <div className="container mt-5">
@@ -68,17 +71,16 @@ const PlaceOrder = () => {
                 className="form-control"
                 placeholder="name"
                 type="text"
-                value={user?.displayName}
-                {...register("name", { required: true })}
+                {...register("name")}
               />
             </div>
             <div className="col-md-6">
               <input
                 className="form-control"
                 placeholder="email"
-                type="email"
                 value={user?.email}
-                {...register("email", { required: true })}
+                type="email"
+                {...register("email")}
               />
             </div>
 
@@ -87,7 +89,7 @@ const PlaceOrder = () => {
                 className="form-control"
                 placeholder="phone no."
                 type="tel"
-                {...register("phone", { required: true })}
+                {...register("phone")}
               />
             </div>
             <div className="col-12">
@@ -95,7 +97,7 @@ const PlaceOrder = () => {
                 className="form-control"
                 placeholder="address"
                 type="text"
-                {...register("address", { required: true })}
+                {...register("address")}
               />
             </div>
             <div className="col-md-6">

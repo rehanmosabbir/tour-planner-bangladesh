@@ -8,11 +8,15 @@ const UserOrders = () => {
   const [orders, setOrders] = useState([]);
   const { user } = useAuth();
 
+  console.log(user.email);
+
   useEffect(() => {
     fetch(`https://cryptic-anchorage-06525.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
+
+  console.log(orders);
 
   const handleDeleteOrder = (id) => {
     const url = `https://cryptic-anchorage-06525.herokuapp.com/orders/${id}`;
