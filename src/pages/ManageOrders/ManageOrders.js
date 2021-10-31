@@ -47,52 +47,59 @@ const ManageOrders = () => {
       </h1>
       <hr className="w-50 m-auto mb-5" />
       <Row xs={1} md={3} className="g-4">
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Order Id</th>
-              <th>Service Name</th>
-              <th>Service Image</th>
-              <th>price</th>
-              <th> Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Phone No.</th>
-              <th>Order Status</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
-              <tr key={order._id}>
-                <td>{order._id}</td>
-                <td>{order.serviceName}</td>
-                <td>
-                  <img className="img-fluid" src={order.imgURL} alt="" />
-                </td>
-                <td>${order.price}</td>
-                <td>{order.name}</td>
-                <td>{order.email}</td>
-                <td>{order.address}</td>
-                <td>{order.phone}</td>
-                <td className="text-warning">{order.status}</td>
-                <td>
-                  <button
-                    onClick={() => handleChangeStatus(order._id)}
-                    className={`btn btn-success ${
-                      order.status === "approved" ? "btn-hidden" : "btn-active"
-                    }`}
-                  >
-                    <div className="d-flex justify-content-center align-items-center">
-                      <small className="me-2">Approve</small>
-                      <FontAwesomeIcon className="text-white" icon={faCheck} />
-                    </div>
-                  </button>
-                </td>
+        <div className="table-responsive-lg">
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Order Id</th>
+                <th>Service Name</th>
+                <th>Service Image</th>
+                <th>price</th>
+                <th> Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone No.</th>
+                <th>Order Status</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr key={order._id}>
+                  <td>{order._id}</td>
+                  <td>{order.serviceName}</td>
+                  <td>
+                    <img className="img-fluid" src={order.imgURL} alt="" />
+                  </td>
+                  <td>${order.price}</td>
+                  <td>{order.name}</td>
+                  <td>{order.email}</td>
+                  <td>{order.address}</td>
+                  <td>{order.phone}</td>
+                  <td className="text-warning">{order.status}</td>
+                  <td>
+                    <button
+                      onClick={() => handleChangeStatus(order._id)}
+                      className={`btn btn-success ${
+                        order.status === "approved"
+                          ? "btn-hidden"
+                          : "btn-active"
+                      }`}
+                    >
+                      <div className="d-flex justify-content-center align-items-center">
+                        <small className="me-2">Approve</small>
+                        <FontAwesomeIcon
+                          className="text-white"
+                          icon={faCheck}
+                        />
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </Row>
     </Container>
   );

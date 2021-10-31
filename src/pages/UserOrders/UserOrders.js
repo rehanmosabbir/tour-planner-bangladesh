@@ -37,51 +37,53 @@ const UserOrders = () => {
       <h1 className="text-danger fw-bold text-center mt-5 mb-4">User Order</h1>
       <hr className="w-50 m-auto mb-5" />
       <Row xs={1} md={3} className="g-4">
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Order Id</th>
-              <th>Service Name</th>
-              <th>Service Image</th>
-              <th>price</th>
-              <th> Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Phone No.</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
-              <tr key={order._id}>
-                <td>{order._id}</td>
-                <td>{order.serviceName}</td>
-                <td>
-                  <img className="img-fluid" src={order.imgURL} alt="" />
-                </td>
-                <td>${order.price}</td>
-                <td>{order.name}</td>
-                <td>{order.email}</td>
-                <td>{order.address}</td>
-                <td>{order.phone}</td>
-                <td>
-                  <button
-                    onClick={() => handleDeleteOrder(order._id)}
-                    className="btn btn-danger btn-delete"
-                  >
-                    <div className="d-flex justify-content-center align-items-center">
-                      <small className="me-2">Delete</small>
-                      <FontAwesomeIcon
-                        className="text-white"
-                        icon={faTrashAlt}
-                      />
-                    </div>
-                  </button>
-                </td>
+        <div className="table-responsive-lg">
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Order Id</th>
+                <th>Service Name</th>
+                <th>Service Image</th>
+                <th>price</th>
+                <th> Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone No.</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr key={order._id}>
+                  <td>{order._id}</td>
+                  <td>{order.serviceName}</td>
+                  <td>
+                    <img className="img-fluid" src={order.imgURL} alt="" />
+                  </td>
+                  <td>${order.price}</td>
+                  <td>{order.name}</td>
+                  <td>{order.email}</td>
+                  <td>{order.address}</td>
+                  <td>{order.phone}</td>
+                  <td>
+                    <button
+                      onClick={() => handleDeleteOrder(order._id)}
+                      className="btn btn-danger btn-delete"
+                    >
+                      <div className="d-flex justify-content-center align-items-center">
+                        <small className="me-2">Delete</small>
+                        <FontAwesomeIcon
+                          className="text-white"
+                          icon={faTrashAlt}
+                        />
+                      </div>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </Row>
     </Container>
   );
