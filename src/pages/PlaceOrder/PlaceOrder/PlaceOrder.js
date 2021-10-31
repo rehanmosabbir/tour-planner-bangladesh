@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
+
 import useAuth from "../../../hooks/useAuth";
 
 const PlaceOrder = () => {
@@ -13,12 +13,14 @@ const PlaceOrder = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log("form submitted");
-    axios.post("http://localhost:5000/orders", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("order placed successfully");
-        reset();
-      }
-    });
+    axios
+      .post("http://localhost:5000/orders", { ...data, status: "pending" })
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("order placed successfully");
+          reset();
+        }
+      });
   };
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const PlaceOrder = () => {
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-md-7">
+        <div className="col-md-12">
           <div className="card mb-3">
             <div className="row g-0">
               <div className="col-md-4">
@@ -42,60 +44,94 @@ const PlaceOrder = () => {
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                  <h5 className="card-title border-bottom pb-3">
+                  <h6 className="card-title border-bottom pb-3">
                     {service?.serviceName}
-                  </h5>
-                  <p className="card-text">{service?.description}</p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
+                    <span className="text-danger mx-5">$ {service?.price}</span>
+                  </h6>
+                  <small className="card-text">{service?.description}</small>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-md-5">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              placeholder="name"
-              type="text"
-              value={user?.displayName}
-              {...register("name", { required: true })}
-            />
-            <input
-              placeholder="email"
-              type="email"
-              value={user?.email}
-              {...register("email", { required: true })}
-            />
-            <textarea
-              placeholder="address"
-              type="text"
-              {...register("address", { required: true })}
-            />
-            <input
-              placeholder="service name"
-              type="text"
-              value={service?.serviceName}
-              {...register("serviceName", { required: true })}
-            />
+        <div className="col-md-6">
+          <h1 className="text-danger fw-bold text-center mt-5 mb-4">
+            Place an order
+          </h1>
+          <hr className="w-50 m-auto mb-5" />
+          <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
+            <div className="col-md-6">
+              <input
+                className="form-control"
+                placeholder="name"
+                type="text"
+                value={user?.displayName}
+                {...register("name", { required: true })}
+              />
+            </div>
+            <div className="col-md-6">
+              <input
+                className="form-control"
+                placeholder="email"
+                type="email"
+                value={user?.email}
+                {...register("email", { required: true })}
+              />
+            </div>
+
+            <div className="col-12">
+              <input
+                className="form-control"
+                placeholder="phone no."
+                type="tel"
+                {...register("phone", { required: true })}
+              />
+            </div>
+            <div className="col-12">
+              <textarea
+                className="form-control"
+                placeholder="address"
+                type="text"
+                {...register("address", { required: true })}
+              />
+            </div>
+            <div className="col-md-6">
+              <input
+                className="form-control"
+                placeholder="service name"
+                type="text"
+                value={service?.serviceName}
+                {...register("serviceName", { required: true })}
+              />
+            </div>
+            <div className="col-md-6">
+              <input
+                className="form-control"
+                placeholder="price in US dollar"
+                type="number"
+                value={service?.price}
+                {...register("price", { required: true })}
+              />
+            </div>
+
+            <div className="col-12">
+              <input
+                className="form-control"
+                placeholder="image url"
+                type="text"
+                value={service?.img}
+                {...register("imgURL", { required: true })}
+              />
+            </div>
 
             <input
-              placeholder="image url"
-              type="text"
-              value={service?.img}
-              {...register("imgURL", { required: true })}
+              type="submit"
+              className="btn btn-danger"
+              value="Place Order"
             />
-            <input type="submit" />
           </form>
         </div>
       </div>
-
-      <Link to={`/home`}>
-        <Button variant="danger">Go Back</Button>
-      </Link>
     </div>
   );
 };

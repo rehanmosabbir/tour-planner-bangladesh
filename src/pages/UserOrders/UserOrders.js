@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Table } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
 
@@ -38,12 +40,14 @@ const UserOrders = () => {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Id</th>
+              <th>Order Id</th>
               <th>Service Name</th>
-              <th>Product photo</th>
+              <th>Service Image</th>
+              <th>price</th>
               <th> Name</th>
-              <th> Email</th>
+              <th>Email</th>
               <th>Address</th>
+              <th>Phone No.</th>
               <th></th>
             </tr>
           </thead>
@@ -55,15 +59,23 @@ const UserOrders = () => {
                 <td>
                   <img className="img-fluid" src={order.imgURL} alt="" />
                 </td>
+                <td>${order.price}</td>
                 <td>{order.name}</td>
                 <td>{order.email}</td>
                 <td>{order.address}</td>
+                <td>{order.phone}</td>
                 <td>
                   <button
                     onClick={() => handleDeleteOrder(order._id)}
-                    className="btn btn-danger"
+                    className="btn btn-danger btn-delete"
                   >
-                    Delele
+                    <div className="d-flex justify-content-center align-items-center">
+                      <small className="me-2">Delete</small>
+                      <FontAwesomeIcon
+                        className="text-white"
+                        icon={faTrashAlt}
+                      />
+                    </div>
                   </button>
                 </td>
               </tr>

@@ -14,26 +14,57 @@ const AddNewService = () => {
     });
   };
   return (
-    <div>
-      <h2>Add a new service</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="text"
-          placeholder="Service Name"
-          {...register("serviceName", { required: true })}
-        />
-        <input
-          type="text"
-          placeholder="price"
-          {...register("price", { required: true })}
-        />
-        <input type="text" placeholder="image URL" {...register("img")} />
-        <textarea
-          placeholder="description of the service"
-          {...register("description")}
-        />
-        <input type="submit" />
-      </form>
+    <div className="container ">
+      <div className="row d-flex flex-column align-items-center justify-content-center">
+        <div className="col-md-6">
+          <h1 className="text-danger fw-bold text-center mt-5 mb-4">
+            Add a new service
+          </h1>
+          <hr className="w-50 m-auto mb-5" />
+          <form onSubmit={handleSubmit(onSubmit)} className="row g-3">
+            <div className="col-12">
+              <input
+                className="form-control"
+                placeholder="Service Name"
+                type="text"
+                {...register("serviceName", { required: true })}
+              />
+            </div>
+
+            <div className="col-12">
+              <textarea
+                className="form-control"
+                placeholder="Service Description"
+                {...register("description", { required: true })}
+              />
+            </div>
+
+            <div className="col-md-4">
+              <input
+                className="form-control"
+                placeholder="price in US dollar"
+                type="number"
+                {...register("price", { required: true })}
+              />
+            </div>
+
+            <div className="col-md-8">
+              <input
+                className="form-control"
+                placeholder="image URL"
+                type="text"
+                {...register("img", { required: true })}
+              />
+            </div>
+
+            <input
+              type="submit"
+              className="btn btn-danger"
+              value="Add Service"
+            />
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
