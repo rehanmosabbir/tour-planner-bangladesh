@@ -68,7 +68,7 @@ const Header = () => {
                 <a href="#login">{user?.displayName || user?.email}</a>
                 <img
                   src={
-                    user?.email
+                    user?.displayName
                       ? user?.photoURL
                       : "https://cdn.iconscout.com/icon/free/png-256/boy-avatar-4-1129037.png"
                   }
