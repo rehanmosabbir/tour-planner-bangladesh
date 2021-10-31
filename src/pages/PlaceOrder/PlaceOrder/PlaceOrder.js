@@ -52,9 +52,12 @@ const PlaceOrder = () => {
                 <div className="card-body">
                   <h6 className="card-title border-bottom pb-3">
                     {service?.serviceName}
-                    <span className="text-danger mx-5">$ {service?.price}</span>
                   </h6>
                   <small className="card-text">{service?.description}</small>
+                  <br />
+                  <span className="text-danger d-inline-block mt-1 fw-bold">
+                    $ {service?.price}
+                  </span>
                 </div>
               </div>
             </div>

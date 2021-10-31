@@ -1,6 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPlaneDeparture,
+  faSignInAlt,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
@@ -55,9 +59,17 @@ const Header = () => {
                 <>
                   <Nav.Link as={Link} to="/registration">
                     Sign up
+                    <FontAwesomeIcon
+                      className="ms-1 text-white"
+                      icon={faUser}
+                    />
                   </Nav.Link>
                   <Nav.Link as={Link} to="/login">
                     Login
+                    <FontAwesomeIcon
+                      className="ms-1 text-white"
+                      icon={faSignInAlt}
+                    />
                   </Nav.Link>
                 </>
               )}

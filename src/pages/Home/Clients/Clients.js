@@ -12,11 +12,11 @@ const Testimonials = () => {
       <div className="row row-cols-1 row-cols-md-3 g-4 mt-4">
         <div className="col">
           <div
-            className="card border-danger mb-3"
+            className="card border-success mb-3"
             style={{ maxWidth: "18rem" }}
           >
             <div className="card-header">HI!</div>
-            <div className="card-body text-danger">
+            <div className="card-body text-success">
               <p className="card-text">
                 <FontAwesomeIcon className="fs-2 me-3" icon={faQuoteLeft} />
                 It was a wonderful experience for us. All your arrangements were
@@ -51,11 +51,11 @@ const Testimonials = () => {
         </div>
         <div className="col">
           <div
-            className="card border-danger mb-3"
+            className="card border-secondary mb-3"
             style={{ maxWidth: "18rem" }}
           >
             <div className="card-header">HELLO!</div>
-            <div className="card-body text-danger">
+            <div className="card-body text-secondary">
               <p className="card-text">
                 <FontAwesomeIcon className="fs-2 me-3" icon={faQuoteLeft} />I We
                 had a great trip in India for 6days And my family and I we can
