@@ -9,13 +9,13 @@ const UserOrders = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user.email}`)
+    fetch(`https://cryptic-anchorage-06525.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   const handleDeleteOrder = (id) => {
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://cryptic-anchorage-06525.herokuapp.com/orders/${id}`;
 
     if (window.confirm("Are you sure to delete this order?")) {
       fetch(url, {

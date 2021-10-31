@@ -14,7 +14,10 @@ const PlaceOrder = () => {
   const onSubmit = (data) => {
     console.log("form submitted");
     axios
-      .post("http://localhost:5000/orders", { ...data, status: "pending" })
+      .post("https://cryptic-anchorage-06525.herokuapp.com/orders", {
+        ...data,
+        status: "pending",
+      })
       .then((res) => {
         if (res.data.insertedId) {
           alert("order placed successfully");
@@ -24,7 +27,7 @@ const PlaceOrder = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${orderId}`)
+    fetch(`https://cryptic-anchorage-06525.herokuapp.com/services/${orderId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

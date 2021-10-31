@@ -6,12 +6,14 @@ const AddNewService = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log("form submitted");
-    axios.post("http://localhost:5000/services", data).then((res) => {
-      if (res.data.insertedId) {
-        alert("Add service successfully");
-        reset();
-      }
-    });
+    axios
+      .post("https://cryptic-anchorage-06525.herokuapp.com/services", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert("Add service successfully");
+          reset();
+        }
+      });
   };
   return (
     <div className="container ">
