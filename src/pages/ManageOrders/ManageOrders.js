@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+
 import "./ManageOrders.css";
 
 const ManageOrders = () => {
@@ -39,6 +40,24 @@ const ManageOrders = () => {
         });
     }
   };
+  const handleDeleteOrder = (id) => {
+    const url = `https://cryptic-anchorage-06525.herokuapp.com/orders/${id}`;
+
+    if (window.confirm("Are you sure to delete this order?")) {
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("Order deleted successfully");
+            const remainingOrders = orders.filter((order) => order._id !== id);
+            setOrders(remainingOrders);
+          }
+        });
+    }
+  };
 
   return (
     <Container>
@@ -51,7 +70,6 @@ const ManageOrders = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>Order Id</th>
                 <th>Service Name</th>
                 <th>Service Image</th>
                 <th>price</th>
@@ -61,12 +79,12 @@ const ManageOrders = () => {
                 <th>Phone No.</th>
                 <th>Order Status</th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               {orders.map((order) => (
                 <tr key={order._id}>
-                  <td>{order._id}</td>
                   <td>{order.serviceName}</td>
                   <td>
                     <img className="img-fluid" src={order.imgURL} alt="" />
@@ -91,6 +109,20 @@ const ManageOrders = () => {
                         <FontAwesomeIcon
                           className="text-white"
                           icon={faCheck}
+                        />
+                      </div>
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => handleDeleteOrder(order._id)}
+                      className="btn btn-danger btn-delete"
+                    >
+                      <div className="d-flex justify-content-center align-items-center">
+                        <small className="me-2">Delete</small>
+                        <FontAwesomeIcon
+                          className="text-white"
+                          icon={faTrashAlt}
                         />
                       </div>
                     </button>
