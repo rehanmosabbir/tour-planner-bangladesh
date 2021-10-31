@@ -1,10 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
+import "./HeaderTop.css";
 
 const HeaderTop = () => {
   return (
-    <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-success header-top">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
